@@ -50,3 +50,5 @@ function game() {
         console.log("It's Tie!")
     }
 }
+
+game()
