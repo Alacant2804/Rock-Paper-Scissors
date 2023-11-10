@@ -1,54 +1,74 @@
-let choice = ["rock", "paper", "scissors"];
+let playerScore = 0;
+let computerScore = 0;
 
-function getComputerChoice() {
+const rockButton = document.getElementById('rock');
+const paperButton = document.getElementById('paper');
+const scissorsButton = document.getElementById('scissors');
+const scoreDiv = document.querySelector(".score");
+const resultDiv = document.querySelector(".result");
+
+initialize();
+
+function initialize() {
+    resultDiv.innerHTML = `Result: New Game Has Started!`
+    scoreDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
+}
+
+function computerChoice() {
+    let choice = ["rock", "paper", "scissors"];
     let position = Math.floor(Math.random() * choice.length);
     return choice[position];
 }
 
-function singleRound(playerSelection, computerSelection) {
-    if (
-        (playerSelection === "rock" && computerSelection === "paper") ||
-        (playerSelection === "paper" && computerSelection === "scissors") ||
-        (playerSelection === "scissors" && computerSelection === "rock")
-    ) {
-        return "You Lose!";
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        return "It's a Tie!";
     } else if (
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "scissors" && computerSelection === "paper") ||
         (playerSelection === "rock" && computerSelection === "scissors")
     ) {
+        playerScore++;
         return "You Won!";
     } else {
-        return "It's Tie!";
+        computerScore++;
+        return "You Lost!";
     }
 }
 
-function game() {
-    let countPlayer = 0;
-    let countComputer = 0;
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("What's your choice? ").toLowerCase();
-        let computerSelection = getComputerChoice();
-        let result = singleRound(playerSelection, computerSelection);
+function updateScore() {
+    scoreDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
+}
 
-        if (result === "You Lose!") {
-            countComputer += 1;
-            console.log("You Lose!");
-        } else if (result === "You Won!") {
-            countPlayer += 1;
-            console.log("You Won!");
-        } else {
-            console.log("It's Tie!");
-        }
-    }
-    // Display the final score here
-    if (countComputer > countPlayer) {
-        console.log("You Lost This Battle!");
-    } else if (countComputer < countPlayer) {
-        console.log("You Won This Battle!");
-    } else {
-        console.log("It's Tie!")
+function displayResult(result) {
+    resultDiv.innerHTML = `Result: ${result}`;
+}
+
+function checkWinner() {
+    if (playerScore === 5) {
+        alert("Congratulations! You won the game!");
+        resetGame();
+    } else if (computerScore === 5) {
+        alert("Sorry, you lost. Try again!");
+        resetGame();
     }
 }
 
-game()
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    updateScore();
+    displayResult("The Game Has Started");
+}
+
+function handleButtonClick(playerChoice) {
+    const computerSelection = computerChoice();
+    const roundResult = playRound(playerChoice, computerSelection);
+    updateScore();
+    displayResult(roundResult);
+    checkWinner();
+}
+
+rockButton.addEventListener('click', () => handleButtonClick('rock'));
+paperButton.addEventListener('click', () => handleButtonClick('paper'));
+scissorsButton.addEventListener('click', () => handleButtonClick('scissors'));

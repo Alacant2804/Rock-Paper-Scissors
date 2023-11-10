@@ -1,0 +1,49 @@
+body {
+    background-color: #282c34;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: #61dafb; /* Set the default text color */
+}
+
+.navbar {
+    background-color: #61dafb;
+    text-align: center;
+    padding: 20px;
+    color: #282c34; /* Set the text color for better contrast */
+    font-size: 30px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin: 150px 0; /* Add margin to separate from navbar and bottom */
+}
+
+button {
+    width: 200px;
+    height: 200px;
+    background-color: #61dafb;
+    color: #282c34;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 60px;
+}
+
+/* Style on hover for buttons */
+button:hover {
+    background-color: #4fa3d1;
+}
+
+.score, .result {
+    font-size: 24px;
+    color: #61dafb;
+    text-align: center;
+    padding: 30px;
+}
+
+.result {
+    padding: 10px;
+}
