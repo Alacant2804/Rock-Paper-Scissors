@@ -3,22 +3,26 @@ body {
     margin: 0;
     height: 100vh;
     font-family: 'Arial', sans-serif;
-    color: #61dafb; /* Set the default text color */
+    color: #61dafb;
 }
 
 .navbar {
     background-color: #61dafb;
     text-align: center;
     padding: 20px;
-    color: #282c34; /* Set the text color for better contrast */
+    color: #282c34;
     font-size: 30px;
+}
+
+.navbar > p {
+    font-weight: 700;
 }
 
 .button-container {
     display: flex;
     justify-content: space-around;
     gap: 10px;
-    margin: 150px 0; /* Add margin to separate from navbar and bottom */
+    margin: 150px 0;
 }
 
 button {
@@ -32,7 +36,6 @@ button {
     font-size: 60px;
 }
 
-/* Style on hover for buttons */
 button:hover {
     background-color: #4fa3d1;
 }

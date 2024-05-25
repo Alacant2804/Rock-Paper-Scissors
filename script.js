@@ -41,7 +41,7 @@ function updateScore() {
 }
 
 function displayResult(result) {
-    resultDiv.innerHTML = `Result: ${result}`;
+    resultDiv.innerHTML = result;
 }
 
 function checkWinner() {
