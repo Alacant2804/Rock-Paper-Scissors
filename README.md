@@ -1,6 +1,6 @@
 # Rock, Paper, Scissors Game 🥊
 
-Welcome to the Rock, Paper, Scissors Game! This web application allows you to play the classic game of Rock, Paper, Scissors against the computer. The Rock, Paper, Scissors Game is a fun and simple way to pass the time. Test your luck and strategy as you choose between rock, paper, and scissors to see who comes out victorious.
+Welcome to the Rock, Paper, Scissors Game! This web application allows you to play the classic game of Rock, Paper, Scissors against the computer. This is a fun and simple way to pass the time. Test your luck and strategy as you choose between rock, paper, and scissors to see who comes out victorious.
 
 ## How to Play 🎮
 
