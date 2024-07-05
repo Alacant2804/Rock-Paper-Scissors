@@ -23,7 +23,7 @@ To play the Rock, Paper, Scissors Game locally, follow these steps:
 git clone https://github.com/your-username/rock-paper-scissors-game.git
 ```
 
-3. Open the `index.html` file in your web browser.
+2. Open the `index.html` file in your web browser.
 
 ## Usage 🎲
 
